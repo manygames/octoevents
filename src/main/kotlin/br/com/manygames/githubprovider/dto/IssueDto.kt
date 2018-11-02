@@ -1,6 +1,6 @@
-package br.com.manygames.dto
+package br.com.manygames.githubprovider.dto
 
-data class Issue(
+data class IssueDto(
         val assignee: Any? = Any(),
         val assignees: List<Any?>? = listOf(),
         val author_association: String? = "",
@@ -23,5 +23,5 @@ data class Issue(
         val title: String? = "",
         val updated_at: String? = "",
         val url: String? = "",
-        val user: User? = User()
+        val user: UserDto? = UserDto()
 )

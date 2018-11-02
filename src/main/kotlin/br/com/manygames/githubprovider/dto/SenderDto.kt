@@ -1,6 +1,6 @@
-package br.com.manygames.dto
+package br.com.manygames.githubprovider.dto
 
-data class Sender(
+data class SenderDto(
         val avatar_url: String? = "",
         val events_url: String? = "",
         val followers_url: String? = "",

@@ -1,8 +1,7 @@
-package br.com.manygames.repo
+package br.com.manygames.githubprovider.repo
 
-import br.com.manygames.model.Issue
+import br.com.manygames.githubprovider.model.Issue
 import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.data.jpa.repository.Query
 import org.springframework.stereotype.Repository
 import java.util.*
 

@@ -1,6 +1,6 @@
-package br.com.manygames.dto
+package br.com.manygames.githubprovider.dto
 
-data class Repository(
+data class RepositoryDto(
         val archive_url: String? = "",
         val archived: Boolean? = false,
         val assignees_url: String? = "",
@@ -53,7 +53,7 @@ data class Repository(
         val notifications_url: String? = "",
         val open_issues: Int? = 0,
         val open_issues_count: Int? = 0,
-        val owner: Owner? = Owner(),
+        val owner: OwnerDto? = OwnerDto(),
         val `private`: Boolean? = false,
         val pulls_url: String? = "",
         val pushed_at: String? = "",

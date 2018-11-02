@@ -1,8 +1,7 @@
-package br.com.manygames.model
+package br.com.manygames.githubprovider.model
 
 import javax.persistence.Entity
 import javax.persistence.Id
-import javax.persistence.NamedQuery
 
 @Entity
 data class Issue(

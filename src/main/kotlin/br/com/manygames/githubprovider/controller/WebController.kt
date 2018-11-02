@@ -1,9 +1,8 @@
-package br.com.manygames.controller
+package br.com.manygames.githubprovider.controller
 
-import br.com.manygames.dto.GithubIssueEvent
-import br.com.manygames.dto.Repository
-import br.com.manygames.model.Issue
-import br.com.manygames.repo.GithubRepository
+import br.com.manygames.githubprovider.dto.GithubIssueDto
+import br.com.manygames.githubprovider.model.Issue
+import br.com.manygames.githubprovider.repo.GithubRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
@@ -16,7 +15,7 @@ class WebController {
 
     @PostMapping("/events")
     @ResponseStatus(value = HttpStatus.OK)
-    fun receiveEvents(@RequestBody issueEvent: GithubIssueEvent) {
+    fun receiveEvents(@RequestBody issueEvent: GithubIssueDto) {
         val issueModel: Issue = fromDtoToModel(issueEvent)
         repository.save(issueModel)
     }
@@ -24,7 +23,7 @@ class WebController {
     @GetMapping("/issues/{number}/events")
     fun getEventByNumber(@PathVariable number: Int) = repository.findByNumber(number)
 
-    private fun fromDtoToModel(issueEvent: GithubIssueEvent): Issue {
+    private fun fromDtoToModel(issueEvent: GithubIssueDto): Issue {
         val issueModel = Issue(
                 issueEvent.issue?.id!!.toInt(),
                 issueEvent.issue?.number!!.toInt(),
