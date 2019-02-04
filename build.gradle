@@ -47,20 +47,21 @@ configurations {
 }
 
 dependencies {
-    compile 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-    compile 'org.jetbrains.kotlin:kotlin-reflect'
-    compile 'io.javalin:javalin:2.3.0'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
-    compile 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.6'
-    compile 'org.springframework.boot:spring-boot-starter-web'
-    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
-    testCompile('com.h2database:h2')
-    testCompile ('org.springframework.boot:spring-boot-starter-test') {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect'
+    implementation 'io.javalin:javalin:2.3.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
+    implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.6'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.koin:koin-android:1.0.2'
+    implementation 'org.jetbrains.exposed:exposed:0.12.1'
+    testImplementation('com.h2database:h2')
+    testImplementation ('org.springframework.boot:spring-boot-starter-test') {
         exclude module: 'junit'
     }
     testImplementation 'org.junit.jupiter:junit-jupiter-api'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    testCompile("junit:junit")
+    testImplementation("junit:junit")
     runtime 'org.postgresql:postgresql'
-    //providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
