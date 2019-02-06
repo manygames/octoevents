@@ -2,8 +2,7 @@ package br.com.manygames.githubprovider.web
 
 import br.com.manygames.githubprovider.web.controller.IssueController
 import io.javalin.Javalin
-import io.javalin.apibuilder.ApiBuilder.get
-import io.javalin.apibuilder.ApiBuilder.path
+import io.javalin.apibuilder.ApiBuilder.*
 import org.koin.standalone.KoinComponent
 
 class Router(private val issueController: IssueController) : KoinComponent {
@@ -11,6 +10,9 @@ class Router(private val issueController: IssueController) : KoinComponent {
         app.routes {
             path("events") {
                 get(issueController::getAll)
+            }
+            path("event") {
+                post(issueController::save)
             }
         }
     }

@@ -5,7 +5,7 @@ import br.com.manygames.githubprovider.domain.repository.IssueRepository
 
 class IssueService(private val issueRepository: IssueRepository){
     fun create(issue: Issue){
-        issueRepository.create(issue)
+        return issueRepository.create(issue)
     }
 
     fun getAll(): List<Pair<String, String>> {

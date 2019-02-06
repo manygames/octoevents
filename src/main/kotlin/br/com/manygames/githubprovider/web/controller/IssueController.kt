@@ -7,7 +7,8 @@ import io.javalin.Context
 
 class IssueController (private val issueService: IssueService){
     fun save(ctx: Context){
-        var issue: Issue = ctx.body<GithubIssueDto>().getModel()
+        var gitObject = ctx.body<GithubIssueDto>()
+        var issue = gitObject.getModel()
         issueService.create(issue)
     }
 

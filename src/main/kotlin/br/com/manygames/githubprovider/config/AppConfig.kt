@@ -14,8 +14,7 @@ class AppConfig : KoinComponent{
         StandAloneContext.startKoin(allModules)
         return Javalin.create().also {app ->
             router.register(app)
-            app.port(4040)
+            app.port(4000)
         }
-//        start(4040)
     }
 }

@@ -5,8 +5,8 @@ import org.jetbrains.exposed.dao.LongIdTable
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 
-internal object Issues : LongIdTable("issue") {
-    //val id = integer("id").autoIncrement().primaryKey()
+internal object Issues : Table("issue") {
+    val id = integer("id")
     val action = varchar("action", 50)
     val number = integer("number")
     val title = varchar("title", 80)
@@ -24,12 +24,13 @@ class IssueRepository() {
     fun create(issue: Issue) {
         return transaction(Database.connect("jdbc:postgresql://localhost:5432/githubevents", driver = "org.postgresql.Driver",
                 user = "postgres", password = "123")) {
-            Issues.insertAndGetId { row ->
+            Issues.insert { row ->
+                row[id] = issue.id
                 row[action] = issue.action
                 row[number] = issue.number
                 row[title] = issue.title
                 row[url] = issue.url
-            }.value
+            }
         }
     }
 
