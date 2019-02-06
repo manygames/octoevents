@@ -1,6 +1,6 @@
 package br.com.manygames.githubprovider.dto
 
-import br.com.manygames.githubprovider.model.Issue
+import br.com.manygames.githubprovider.domain.Issue
 
 data class GithubIssueDto(
         val action: String? = "",
@@ -11,8 +11,8 @@ data class GithubIssueDto(
     fun getModel(): Issue {
         val issueModel = Issue(
                 this.issue?.id!!.toInt(),
-                this.issue?.number!!.toInt(),
                 this.action!!,
+                this.issue?.number!!.toInt(),
                 this.issue?.title!!,
                 this.issue?.url!!)
         return issueModel
@@ -22,12 +22,12 @@ data class GithubIssueDto(
 data class IssueDto(
         val assignee: Any? = Any(),
         val assignees: List<Any?>? = listOf(),
-        val author_association: String? = "",
+        val authorAssociation: String? = "",
         val body: String? = "",
-        val closed_at: Any? = Any(),
+        val closedAt: Any? = Any(),
         val comments: Int? = 0,
-        val comments_url: String? = "",
-        val created_at: String? = "",
+        val commentsUrl: String? = "",
+        val createdAt: String? = "",
         val events_url: String? = "",
         val html_url: String? = "",
         val id: Int? = 0,
