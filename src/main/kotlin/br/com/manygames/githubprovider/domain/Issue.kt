@@ -1,4 +1,4 @@
-package br.com.manygames.githubprovider.model
+package br.com.manygames.githubprovider.domain
 
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -7,7 +7,7 @@ import javax.persistence.Id
 data class Issue(
         @Id
         val id: Int,
-        val number: Int,
         val action: String,
+        val number: Int,
         val title: String,
         val url: String)

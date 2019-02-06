@@ -1,4 +1,4 @@
-package br.com.manygames.githubprovider.dto
+package br.com.manygames.githubprovider.web.dto
 
 import br.com.manygames.githubprovider.domain.Issue
 
